@@ -1,0 +1,105 @@
+/* custom properties */
+:root{
+    --primary-color: rgb(42, 165, 122);
+    --light-color: rgb(255, 253, 116);
+    --dark-color: #333;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header, footer{
+    display: flex;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem;
+    align-items: center;
+}
+
+h1::before{
+    content: '🐾 ' ;
+}
+
+/* naviagtion styles */
+nav{
+    flex: 1;
+}
+
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header ul li{
+    flex: 1;
+}
+
+nav a{
+    color: var(--light-color);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+nav a:hover, :focus{
+    color: var(--primary-color);
+    background-color: var(--light-color);
+    border-radius: 5px;
+}
+/* adjascent child selector */
+h2+p{
+    border: 2px solid grey;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+h2+p::first-letter{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 0.25rem;
+}
+
+.stars span:hover~span{
+    opacity: 0.4;
+}
+
+.stars span{
+    cursor: pointer;
+}
+
+/* attribute selector */
+/* all the a tags with href */
+
+a[href="#"]{
+
+}
+
+/* all the a tags with href starting with http */
+a[href^="http"]{
+border-left: 4px var(--primary-color);
+margin-left: 1rem;
+padding-left: 1rem;
+}
+
+p::selection{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.google{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin: 20px 0;
+    padding: 1rem;
+    display: block;
+    width: calc(100% - 32px - 4px - 16px - 16px);
+}
